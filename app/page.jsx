@@ -31,19 +31,20 @@ export default function HomePage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
         className="min-h-[88vh] flex items-center relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1C0F06 0%, #2E1A0E 40%, #4A2510 70%, #3A1E0A 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1A0230 0%, #2D0A45 40%, #3D1060 70%, #2A0840 100%)' }}
       >
-        {/* Warm glow overlays */}
+        {/* Warm purple glow overlays */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-2/3 h-full opacity-20"
-            style={{ background: 'radial-gradient(ellipse at 80% 30%, #E8A830 0%, transparent 65%)' }} />
-          <div className="absolute bottom-0 left-0 w-1/2 h-2/3 opacity-10"
+          <div className="absolute top-0 right-0 w-2/3 h-full opacity-25"
+            style={{ background: 'radial-gradient(ellipse at 80% 30%, #6B2E8A 0%, transparent 65%)' }} />
+          <div className="absolute bottom-0 left-0 w-1/2 h-2/3 opacity-15"
             style={{ background: 'radial-gradient(ellipse at 20% 80%, #C8941E 0%, transparent 60%)' }} />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/40 rounded-full px-4 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6"
+              style={{ background: 'rgba(200, 148, 30, 0.15)', border: '1px solid rgba(200, 148, 30, 0.35)' }}>
               <span className="w-2 h-2 rounded-full bg-amber inline-block"></span>
               <p className="text-amber text-xs tracking-[0.25em] uppercase font-sans">Premium Halal Deli Meats</p>
             </div>
@@ -58,13 +59,15 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/menu"
-                className="bg-gold text-deepbrown font-bold tracking-widest uppercase px-8 py-3.5 rounded-lg hover:bg-amber transition-colors text-sm shadow-lg shadow-gold/20"
+                className="font-bold tracking-widest uppercase px-8 py-3.5 rounded-lg transition-colors text-sm shadow-lg"
+                style={{ background: 'linear-gradient(135deg, #C8941E, #E8A830)', color: '#1A0230' }}
               >
                 View Our Menu
               </Link>
               <Link
                 href="/about"
-                className="border border-warm/40 text-warm font-light tracking-widest uppercase px-8 py-3.5 rounded-lg hover:border-amber hover:text-amber transition-colors text-sm"
+                className="font-light tracking-widest uppercase px-8 py-3.5 rounded-lg transition-colors text-sm"
+                style={{ border: '1px solid rgba(232, 208, 245, 0.4)', color: '#E8D0F5' }}
               >
                 Our Story
               </Link>
@@ -74,24 +77,27 @@ export default function HomePage() {
           {/* Hero card */}
           <div className="hidden md:flex justify-center">
             <div className="rounded-2xl p-8 max-w-sm w-full"
-              style={{ background: 'rgba(200, 148, 30, 0.08)', border: '1px solid rgba(200, 148, 30, 0.25)', backdropFilter: 'blur(4px)' }}>
+              style={{ background: 'rgba(107, 46, 138, 0.2)', border: '1px solid rgba(200, 148, 30, 0.25)', backdropFilter: 'blur(4px)' }}>
               <div className="text-center mb-6">
                 <div className="text-6xl mb-4">🥩</div>
                 <h3 className="font-serif text-cream text-2xl mb-2">Fresh This Week</h3>
-                <p className="text-warm/70 text-sm">Sliced to order in the DMV</p>
+                <p className="text-sm" style={{ color: 'rgba(232, 208, 245, 0.6)' }}>Sliced to order in the DMV</p>
               </div>
-              <div className="space-y-3 border-t border-gold/20 pt-5">
+              <div className="space-y-3 border-t pt-5" style={{ borderColor: 'rgba(200, 148, 30, 0.2)' }}>
                 {['Smoked Turkey', 'Beef Bologna', 'Tandoori Chicken', 'Roast Beef', 'Pepperoni'].map(item => (
                   <div key={item} className="flex items-center justify-between">
                     <span className="text-warm text-sm">{item}</span>
-                    <span className="text-gold text-xs">✓ Halal</span>
+                    <span className="text-amber text-xs">✓ Halal</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-4 border-t border-gold/20 flex gap-2 flex-wrap">
-                <span className="text-xs px-3 py-1 rounded-full text-amber" style={{ background: 'rgba(200, 148, 30, 0.15)', border: '1px solid rgba(200, 148, 30, 0.3)' }}>Halal</span>
-                <span className="text-xs px-3 py-1 rounded-full text-amber" style={{ background: 'rgba(200, 148, 30, 0.15)', border: '1px solid rgba(200, 148, 30, 0.3)' }}>Preservative-Free</span>
-                <span className="text-xs px-3 py-1 rounded-full text-amber" style={{ background: 'rgba(200, 148, 30, 0.15)', border: '1px solid rgba(200, 148, 30, 0.3)' }}>DMV Local</span>
+              <div className="mt-5 pt-4 flex gap-2 flex-wrap border-t" style={{ borderColor: 'rgba(200, 148, 30, 0.2)' }}>
+                {['Halal', 'Preservative-Free', 'DMV Local'].map(tag => (
+                  <span key={tag} className="text-xs px-3 py-1 rounded-full text-amber"
+                    style={{ background: 'rgba(200, 148, 30, 0.12)', border: '1px solid rgba(200, 148, 30, 0.3)' }}>
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -99,8 +105,8 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST BAR ────────────────────────────────────── */}
-      <div className="bg-gold py-4">
-        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-deepbrown text-sm font-sans">
+      <div style={{ background: 'linear-gradient(135deg, #C8941E, #E8A830)' }} className="py-4">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-sm font-sans" style={{ color: '#1A0230' }}>
           {['100% Halal Certified', 'Zero Preservatives', 'DMV Community Brand', 'Pickup & Nationwide Shipping'].map(item => (
             <div key={item} className="flex items-center gap-2 font-semibold tracking-wide">
               <span>✦</span> {item}
@@ -118,8 +124,10 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {highlights.map((h) => (
-              <div key={h.title} className="bg-cream rounded-2xl p-8 border border-warm/50 shadow-sm hover:shadow-md hover:border-caramel transition-all">
-                <div className="w-14 h-14 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-3xl mb-5">
+              <div key={h.title} className="bg-cream rounded-2xl p-8 border border-warm/50 shadow-sm hover:shadow-md transition-all"
+                style={{ borderColor: 'rgba(107, 46, 138, 0.15)' }}>
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-5"
+                  style={{ background: 'rgba(200, 148, 30, 0.1)', border: '1px solid rgba(200, 148, 30, 0.2)' }}>
                   {h.icon}
                 </div>
                 <h3 className="font-serif text-xl text-espresso mb-3">{h.title}</h3>
@@ -140,9 +148,10 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {featuredItems.map((item) => (
-              <div key={item.name} className="bg-linen rounded-2xl overflow-hidden border border-warm/40 hover:border-caramel hover:shadow-lg transition-all group cursor-pointer">
+              <div key={item.name} className="bg-linen rounded-2xl overflow-hidden hover:shadow-lg transition-all group cursor-pointer"
+                style={{ border: '1px solid rgba(107, 46, 138, 0.15)' }}>
                 <div className="h-36 flex items-center justify-center text-5xl"
-                  style={{ background: 'linear-gradient(135deg, #2E1A0E 0%, #4A2510 100%)' }}>
+                  style={{ background: 'linear-gradient(135deg, #2D0A45 0%, #4A1068 100%)' }}>
                   🥩
                 </div>
                 <div className="p-5">
@@ -156,7 +165,8 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               href="/menu"
-              className="bg-espresso text-cream font-bold tracking-widest uppercase px-10 py-4 rounded-lg hover:bg-bark transition-colors text-sm shadow-md"
+              className="text-cream font-bold tracking-widest uppercase px-10 py-4 rounded-lg transition-colors text-sm shadow-md"
+              style={{ background: '#2D0A45' }}
             >
               See Full Menu
             </Link>
@@ -166,9 +176,9 @@ export default function HomePage() {
 
       {/* ── STORY STRIP ──────────────────────────────────── */}
       <section className="py-24 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1C0F06 0%, #2E1A0E 50%, #3A1E0A 100%)' }}>
-        <div className="absolute inset-0 opacity-15 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 30% 50%, #C8941E 0%, transparent 60%)' }} />
+        style={{ background: 'linear-gradient(135deg, #1A0230 0%, #2D0A45 50%, #3D1060 100%)' }}>
+        <div className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 30% 50%, #6B2E8A 0%, transparent 60%)' }} />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <p className="text-amber text-sm tracking-[0.3em] uppercase font-sans mb-4">Our Story</p>
           <h2 className="font-serif text-4xl md:text-5xl text-cream mb-6 leading-snug">
@@ -180,7 +190,8 @@ export default function HomePage() {
           </p>
           <Link
             href="/about"
-            className="border border-amber/60 text-amber font-light tracking-widest uppercase px-8 py-3.5 rounded-lg hover:bg-gold hover:text-deepbrown hover:border-gold transition-colors text-sm"
+            className="font-light tracking-widest uppercase px-8 py-3.5 rounded-lg transition-colors text-sm text-amber"
+            style={{ border: '1px solid rgba(200, 148, 30, 0.5)' }}
           >
             Read Our Full Story
           </Link>
@@ -191,13 +202,14 @@ export default function HomePage() {
       <section className="py-20"
         style={{ background: 'linear-gradient(135deg, #C8941E 0%, #E8A830 50%, #C8941E 100%)' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-4xl text-deepbrown mb-4">Ready to Order?</h2>
-          <p className="text-bark text-base mb-8 font-light">
+          <h2 className="font-serif text-4xl mb-4" style={{ color: '#1A0230' }}>Ready to Order?</h2>
+          <p className="text-base mb-8 font-light" style={{ color: '#3D1060' }}>
             Pick up in the DMV or have it shipped right to your door.
           </p>
           <Link
             href="/menu"
-            className="bg-espresso text-cream font-bold tracking-widest uppercase px-10 py-4 rounded-lg hover:bg-deepbrown transition-colors text-sm shadow-lg shadow-espresso/30"
+            className="text-cream font-bold tracking-widest uppercase px-10 py-4 rounded-lg transition-colors text-sm shadow-lg"
+            style={{ background: '#1A0230' }}
           >
             Order Now
           </Link>
