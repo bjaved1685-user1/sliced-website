@@ -16,14 +16,17 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="bg-espresso sticky top-0 z-50 shadow-md">
+    <nav className="sticky top-0 z-50 shadow-lg" style={{ background: '#1C0F06', borderBottom: '1px solid rgba(200, 148, 30, 0.15)' }}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-gold flex items-center justify-center">
-            <span className="text-espresso font-bold text-sm font-serif">S</span>
+          <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #C8941E, #E8A830)' }}>
+            <span className="text-deepbrown font-bold text-sm font-serif">S</span>
           </div>
-          <span className="text-cream font-serif text-2xl tracking-wide">Sliced</span>
+          <div>
+            <span className="text-cream font-serif text-2xl tracking-wide">Sliced</span>
+            <span className="hidden sm:inline text-xs text-muted ml-2 tracking-widest uppercase">· Halal Deli</span>
+          </div>
         </Link>
 
         {/* Desktop Links */}
@@ -32,10 +35,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-widest uppercase font-sans ${
+              className={`text-xs tracking-widest uppercase font-sans transition-colors ${
                 pathname === link.href
-                  ? 'text-gold border-b border-gold pb-0.5'
-                  : 'text-linen hover:text-gold'
+                  ? 'text-amber border-b border-amber pb-0.5'
+                  : 'text-warm/70 hover:text-amber'
               }`}
             >
               {link.label}
@@ -43,7 +46,8 @@ export default function Navbar() {
           ))}
           <Link
             href="/menu"
-            className="bg-gold text-espresso text-sm font-bold tracking-widest uppercase px-5 py-2 rounded hover:bg-caramel hover:text-cream"
+            className="text-deepbrown font-bold tracking-widest uppercase px-5 py-2 rounded-lg text-xs transition-colors shadow-md"
+            style={{ background: 'linear-gradient(135deg, #C8941E, #E8A830)' }}
           >
             Order Now
           </Link>
@@ -51,7 +55,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-cream focus:outline-none"
+          className="md:hidden text-warm focus:outline-none"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -66,14 +70,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-deepbrown px-6 pb-6 flex flex-col gap-4">
+        <div className="md:hidden px-6 pb-6 flex flex-col gap-1" style={{ background: '#1C0F06' }}>
           {links.map(link => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`text-sm tracking-widest uppercase font-sans pt-3 border-t border-espresso ${
-                pathname === link.href ? 'text-gold' : 'text-linen hover:text-gold'
+              className={`text-xs tracking-widest uppercase font-sans py-3 border-t transition-colors ${
+                pathname === link.href ? 'text-amber border-gold/20' : 'text-warm/70 hover:text-amber border-gold/10'
               }`}
             >
               {link.label}
@@ -82,7 +86,8 @@ export default function Navbar() {
           <Link
             href="/menu"
             onClick={() => setOpen(false)}
-            className="bg-gold text-espresso text-sm font-bold tracking-widest uppercase px-5 py-3 rounded text-center mt-2 hover:bg-caramel hover:text-cream"
+            className="text-deepbrown font-bold tracking-widest uppercase px-5 py-3 rounded-lg text-center mt-3 text-xs"
+            style={{ background: 'linear-gradient(135deg, #C8941E, #E8A830)' }}
           >
             Order Now
           </Link>

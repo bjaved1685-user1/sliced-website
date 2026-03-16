@@ -7,14 +7,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        espresso: '#3D2B1F',
-        caramel: '#8B5E3C',
-        gold: '#C9A84C',
-        cream: '#FAF7F2',
-        linen: '#F0E8D8',
-        bark: '#6B4226',
-        deepbrown: '#2C1810',
-        muted: '#9E8A78',
+        espresso: '#2E1A0E',
+        caramel: '#9C6B3C',
+        gold: '#C8941E',
+        amber: '#E8A830',
+        cream: '#FDF6EC',
+        linen: '#F5E8D0',
+        bark: '#7A4A28',
+        deepbrown: '#1C0F06',
+        muted: '#A08060',
+        warm: '#EDD9B8',
       },
       fontFamily: {
         serif: ['Playfair Display', 'Georgia', 'serif'],
